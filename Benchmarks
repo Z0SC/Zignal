@@ -1,5 +1,5 @@
 Zignal v2.0.0 (New Zignal), compared to Stravant's GoodSignal implementation & Zignal v1.1 (Old Zignal)
-Labels: Ranking | Name | Duration | Compairison | Time Complexity
+Labels: Ranking | Name | Duration | Comparison | Time Complexity
 
 Create Signal (10,000,000x)
 1. Old Zignal | 0.434771710 | 1.0000x | O(1)
