@@ -1,0 +1,97 @@
+Zignal v2.0.0 (New Zignal), compared to Stravant's GoodSignal implementation & Zignal v1.1 (Old Zignal)
+Labels: Ranking | Name | Duration | Compairison | Time Complexity
+
+Create Signal (10,000,000x)
+1. Old Zignal | 0.434771710 | 1.0000x | O(1)
+2. GoodSignal | 0.642974124 | 1.4788x | O(1)
+3. New Zignal | 0.652172516 | 1.5000x | O(1)
+
+Connect (2,500,000x)
+1. New Zignal | 0.455821270 | 1.0000x | O(1)
+2. Old Zignal | 0.480505599 | 1.0541x | O(1)
+3. GoodSignal | 0.566573460 | 1.2430x | O(1)
+
+Once (1,500,000x)
+1. New Zignal | 0.460882452 | 1.0000x | O(1)
+2. Old Zignal | 0.479562526 | 1.0405x | O(1)
+3. GoodSignal | 0.545359698 | 1.1833x | O(1)
+
+Wait (250,000x)
+1. New Zignal | 0.576629904 | 1.0000x | O(1)
+2. Old Zignal | 0.579622250 | 1.0052x | O(1)
+3. GoodSignal | 0.639837447 | 1.1096x | O(1)
+
+Fire, 0 Connections (10,000,000x)
+1. New Zignal | 0.263348139 | 1.0000x | O(n)
+2. GoodSignal | 0.287040696 | 1.0900x | O(n)
+3. Old Zignal | 0.486179143 | 1.8461x | O(n)
+
+Fire, 1 Non-Yielding Connection (1,000,000x)
+1. GoodSignal | 0.500584590 | 1.0000x | O(n)
+2. New Zignal | 0.544047956 | 1.0868x | O(n)
+3. Old Zignal | 0.588054219 | 1.1747x | O(n)
+
+Fire, 5 Non-Yielding Connections (200,000x)
+1. GoodSignal | 0.476624838 | 1.0000x | O(n)
+2. New Zignal | 0.517396476 | 1.0855x | O(n)
+3. Old Zignal | 0.528240722 | 1.1083x | O(n)
+
+Fire, 10 Non-Yielding Connections (100,000x)
+1. GoodSignal | 0.467305454 | 1.0000x | O(n)
+2. New Zignal | 0.515656198 | 1.1034x | O(n)
+3. Old Zignal | 0.517871504 | 1.1082x | O(n)
+
+Fire, 1 Yielding Connection (500,000x)
+1. New Zignal | 0.548019994 | 1.0000x | O(n)
+2. Old Zignal | 0.566385166 | 1.0335x | O(n)
+3. GoodSignal | 1.222778276 | 2.2312x | O(n)
+
+Fire, 5 Yielding Connections - (100,000x)
+1. New Zignal | 0.507846796 | 1.0000x | O(n)
+2. Old Zignal | 0.510964664 | 1.0061x | O(n)
+3. GoodSignal | 1.166012935 | 2.2960x | O(n)
+
+Fire, 10 Yielding Connections (50,000x)
+1. New Zignal | 0.480866126 | 1.0000x | O(n)
+2. Old Zignal | 0.482138086 | 1.0026x | O(n)
+3. GoodSignal | 1.130791884 | 2.3515x | O(n)
+
+DisconnectAll, 1 Connection (5,000,000x)
+1. GoodSignal | 0.270898002 | 1.0000x | O(1) [UNSAFE] (Doesn't set Connection.Connected to false)
+2. New Zignal | 0.338955726 | 1.2512x | O(n)
+3. Old Zignal | 0.523689594 | 1.9332x | O(n)
+
+DisconnectAll, 5 Connections (2,500,000x)
+1. GoodSignal | 0.134713118 | 1.0000x | O(1) [UNSAFE] (Doesn't set Connection.Connected to false)
+2. New Zignal | 0.299921396 | 2.2263x | O(n)
+3. Old Zignal | 0.360078211 | 2.6729x | O(n)
+
+DisconnectAll, 10 Connections (2,000,000x)
+1. GoodSignal | 0.109263816 | 1.0000x | O(1) [UNSAFE] (Doesn't set Connection.Connected to false)
+2. New Zignal | 0.352691300 | 3.2278x | O(n)
+3. Old Zignal | 0.402166194 | 3.6807x | O(n)
+
+Disconnect, 1 Connection (5,000,000x)
+1. New Zignal | 0.415059884 | 1.0000x | O(1)
+2. GoodSignal | 0.425906544 | 1.0261x | O(n)
+3. Old Zignal | 0.561549756 | 1.3529x | O(1)
+
+Disconnect, 5 Connections, Oldest to Newest (1,000,000x)
+1. New Zignal | 0.333451843 | 1.0000x | O(1)
+2. Old Zignal | 0.471399354 | 1.4137x | O(1)
+3. GoodSignal | 0.483628454 | 1.4503x | O(n)
+
+Disconnect, 10 Connections, Oldest to Newest (500,000x)
+1. New Zignal | 0.297224040 | 1.0000x | O(1)
+2. Old Zignal | 0.439451252 | 1.4785x | O(1)
+3. GoodSignal | 0.642294658 | 2.1609x | O(n)
+
+Disconnect, 5 Connections, Newest to Oldest (1,000,000x)
+1. New Zignal | 0.346540810 | 1.0000x | O(1)
+2. GoodSignal | 0.351238248 | 1.0135x | O(n)
+3. Old Zignal | 0.383276598 | 1.1060x | O(1)
+
+Disconnect, 10 Connections, Newest to Oldest (500,000x)
+1. New Zignal | 0.310817155 | 1.0000x | O(1)
+2. GoodSignal | 0.317975478 | 1.0230x | O(n)
+3. Old Zignal | 0.335007946 | 1.0778x | O(1)
